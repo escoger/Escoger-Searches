@@ -1,0 +1,28 @@
+application:
+  name: spring-boot-cassandra-datastax
+server:
+  port: 8089
+# context-path: /student-api
+# Following are Cassandra Configuration
+#cassandra:
+#  host: 127.0.0.1:9042
+#  cluster:
+#    name: test
+#    username: cassandra
+#    password: cassandra
+#  keyspace:
+#    name: escoger_mobiles
+
+spring:
+  data:
+    cassandra:
+      keyspace-name: escoger_mobiles
+      contact-points: localhost
+  jpa:
+    show-sql: true
+    
+logging:
+  level:
+    com.datastax.driver.core.QueryLogger.NORMAL: DEBUG
+    com.datastax.driver.core.QueryLogger.SLOW: TRACE
+   
